@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <title>Biblioteca CUC</title>
+</head>
+
+<body>
+    <!--- encabezado o nombre del centro medico-->
+    <div class="text-center bg-danger text-white">
+        <h1>BIBLIOTECA CUC</h1>
+    </div>
+
+    <div class="container">
+        <br />
+        <!--- inicio del menu-->
+        <nav class="nav navbar-dark nav-pills flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center me-5 nav-link  text-danger " aria-current="page" href="../index.html">
+                <h6>INICIO</h6>
+            </a>
+            <a class="bg-danger flex-sm-fill text-sm-center me-5 nav-link active border border-danger" href="">
+                <h6>CRUD</h6>
+            </a>
+            <a class="flex-sm-fill text-sm-center me-5 nav-link text-danger " href="consultaselect.html">
+                <h6>CONSULTA SELECT</h6>
+            </a>
+
+            <a class="flex-sm-fill text-sm-center me-5 nav-link text-danger " href="iniciosecion.html">
+                <h6>INICIÓ DE SESIÓN</h6>
+            </a>
+        </nav>
+
+        <!---fin del menu-->
+
+        <br>
+        </br>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h3>Consultar todos los alquileres de la biblioteca</h3>
+                <!--Consultar todos los registros. llama el metodo getall()-->
+                <button class="btn btn-primary" id="Mostrar">Buscar todos los
+                    registros</button>
+                <br>
+                <table id="table" style="display: none;" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDOS</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">FECHA ALQUILER</th>
+                            <th scope="col">DEVUELTO</th>
+                        </tr>
+                    </thead>
+                    <tbody ID="table">
+                    </tbody>
+                </table>
+                <div id="res">
+
+                </div>
+            </div>
+
+
+            <div class="col-lg-6">
+                <h3>Consultar por alquiler de la biblioteca</h3>
+                <!--Consultar por Id. llama el metodo getallbyid()-->
+                <input type="text" id="Nombre" class="form-control" placeholder="Nombre del Usuario ">
+                <br>
+                <button class="btn btn-primary" id="MostrarId">Buscar registro</button>
+
+                <br>
+                <table id="tableid" style="display: none;" class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">APELLIDOS</th>
+                            <th scope="col">TITULO</th>
+                            <th scope="col">FECHA ALQUILER</th>
+                            <th scope="col">DEVUELTO</th>
+                        </tr>
+                    </thead>
+                    <tbody ID="tableid">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <br>
+
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Insertar un alquiler</h3>
+                <!--operacion pa-->
+                <input type="text" id="idUsuario" class="form-control" placeholder="Numero de Usuario"><br>
+                <input type="text" id="idLibro" class="form-control" placeholder="Numero de Libro "><br>
+                <button class="btn btn-warning" onclick="addcrud()">Insertar alquiler</button>
+
+            </div>
+            <div class="col-lg-6">
+                <h3>Actualizar un alquiler</h3>
+                <!--operacion pa-->
+                <input type="text" id="idUsuario" class="form-control" placeholder="Numero de Usuario "><br>
+                <input type="text" id="idLibro" class="form-control" placeholder="Numero de Libro"><br>
+                <!-- <input type="text" id="Devuelto" class="form-control" placeholder="Prueba devuelto"><br> -->
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-2 pt-0">Devolucion</legend>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Devuelto" id="Devuelto1" value="0"
+                                checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                No
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Devuelto" id="Devuelto2" value="1">
+                            <label class="form-check-label" for="gridRadios2">
+                                Si
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+                <br>
+                <input type="text" id="idAlquile" class="form-control" placeholder=" Id "><br>
+                <button class="btn btn-warning" onclick="actualizarcrud()">Actualizar un alquiler</button>
+            </div>
+
+        </div>
+
+
+        <hr>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h3>Eliminar por id un alquiler</h3>
+                <input type="text" id="idAlquiler" class="form-control" placeholder="Id "> <br>
+                <button class="btn btn-danger" onclick="borrarcrud()">Eliminar un alquiler</button>
+            </div>
+            <div class="col-lg-6">
+
+            </div>
+
+        </div>
+    </div>
+    </br>
+    <hr>
+    </hr>
+    <!--- pie de pagina-->
+    <div class="text-center bg-danger text-white">
+        notificacionesjudicialescuc@cuc.edu.co <br />
+        Calle 58 # 55 - 66. Barranquilla, Colombia <br />
+        3225498 - 3167973723 <br />
+        Copyright © 2022 Universidad de la Costa CUC.
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/proceso.js"></script>
+</body>
+
+</html>

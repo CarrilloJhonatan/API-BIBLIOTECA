@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css" href="../css/abscenter.css" />
+    <title>Biblioteca CUC</title>
+</head>
+
+<body>
+    <!--- encabezado o nombre del centro medico-->
+    <div class="text-center bg-danger text-white">
+        <h1>BIBLIOTECA CUC</h1>
+    </div>
+
+    <div class="container">
+        <br />
+        <!--- inicio del menu-->
+        <nav class="nav navbar-dark nav-pills flex-column flex-sm-row">
+            <a class="flex-sm-fill text-sm-center me-5 nav-link  text-danger " aria-current="page" href="../index.html">
+                <h6>INICIO</h6>
+            </a>
+            <a class="flex-sm-fill text-sm-center me-5 nav-link disabled " href="crud.html">
+                <h6>CRUD</h6>
+            </a>
+            <a class="flex-sm-fill text-sm-center me-5 nav-link disabled " href="consultaselect.html">
+                <h6>CONSULTA SELECT</h6>
+            </a>
+
+            <a class="bg-danger flex-sm-fill text-sm-center me-5 nav-link active border border-danger" href="">
+                <h6>INICIÓ DE SESIÓN</h6>
+            </a>
+        </nav>
+
+        <!---fin del menu-->
+
+
+        <br>
+        </br>
+        <div class="row">
+
+            <div class="col-lg-6">
+                <h1 class="text-danger text-center">Bienvenido a la Universidad de la Costa CUC</h1>
+                <img src="../img/BIBLIOTECA2.jpeg" class="img-fluid" />
+            </div>
+
+            <div class="col-lg-1">
+
+            </div>
+
+            <div class="col-lg-5">
+                <div class="row text-center login-page">
+
+
+                    <form action="../html/crud.html" method="post">
+                        <br><br><br>
+                        <div class="row">
+
+                            <h1 class="login-form-font-header text-danger">Inicio Seccion
+                            </h1>
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <input name="usuario" id="CorreoElectronico" type="email" placeholder="CorreoElectronico"
+                                required />
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <input name="password" id="Contraseña" type="password" placeholder="Contraseña" required />
+
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="">
+                                <button class="btn btn-outline-danger" onclick="login()">Ingresar</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+        <br />
+
+
+        <!--- tabla de 5 filas x 2 columnas-->
+
+        <table class="table table-danger table-bordered border-danger text-black table-hover">
+            <tr>
+                <th class="text-center">Dinámico</th>
+                <th class="text-center">Productivo</th>
+                <th class="text-center"> Social</th>
+            </tr>
+            <tr>
+                <td class="text-center">Únete a nuestra emocionante comunidad en línea de instituciones que promueven la
+                    Educación en
+                    Colombia, a través de nuestras soluciones de información.</td>
+                <td class="text-center">Disfruta de los servicios de nuestras aplicaciones en internet, con el propósito
+                    de potencializar
+                    sus procesos administrativos, académicos y de educación virtual.</td>
+                <td class="text-center">Nuestras herramientas se fortalecen constantemente para ofrecerle una grata y
+                    confiable experiencia.
+                    ¡Prestigio y Productividad para su Institución!</td>
+
+            </tr>
+
+        </table>
+        <br />
+        <!--- grilla de 12 para mostrar imagen-->
+        <div style="text-align: center;" class="row">
+            <div class="col-lg-2">
+
+            </div>
+            <div class="col-lg-8">
+                <img src="../img/BIBLIOTECA.jpeg" class="img-fluid" />
+
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+    </div>
+    <br>
+    </br>
+    </hr>
+
+    <!--- pie de pagina-->
+    <!--- pie de pagina-->
+    <div class="text-center bg-danger text-white">
+        notificacionesjudicialescuc@cuc.edu.co <br />
+        Calle 58 # 55 - 66. Barranquilla, Colombia <br />
+        3225498 - 3167973723 <br />
+        Copyright © 2022 Universidad de la Costa CUC.
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/procesologin.js"></script>
+</body>
+
+</html>
